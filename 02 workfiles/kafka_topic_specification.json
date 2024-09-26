@@ -1,0 +1,196 @@
+{
+    "name": "data",
+    "namespace": "ch.dps.fremdvertrag.processed",
+    "type": "record",
+    "doc": "https://wiki.helvetia.group/display/VTPL/API+Specification/ch+dps+fremdvertrag+processed",
+    "fields": [
+        {
+            "name": "name",
+            "type": "string",
+            "doc": "Competitor Contract Name (Number) as given on the Document"
+        },
+        {
+            "name": "digitizationTimestamp",
+            "type": {
+                "type": "long",
+                "logicalType": "timestamp-millis"
+            },
+            "doc": "The timestamp when the document was digitized"
+        },
+        {
+            "name": "sourceSystem",
+            "type": "string",
+            "doc": "The source system from which the document was digitized"
+        },
+        {
+            "name": "digitilizedBy",
+            "type": "string",
+            "doc": "User-Helvetia-Identifier who digitized the document"
+        },
+        {
+            "name": "competitor",
+            "type": "string",
+            "doc": "Competitor Name"
+        },
+        {
+            "name": "contractSignedDate",
+            "type": "string",
+            "doc": "Contract Signed Date in YYYY-MM-DD format"
+        },
+        {
+            "name": "startDate",
+            "type": "string",
+            "doc": "Contract Start Date in YYYY-MM-DD format"
+        },
+        {
+            "name": "expirationDate",
+            "type": "string",
+            "doc": "Contract Expiration Date in YYYY-MM-DD format"
+        },
+        {
+            "name": "contractHolder",
+            "type": {
+                "type": "record",
+                "name": "ContractHolder",
+                "namespace": "ch.dps.fremdvertrag.processed",
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "doc": "Name of the Contract Holder"
+                    },
+                    {
+                        "name": "zepasId",
+                        "type": "string",
+                        "doc": "Helvetia Business Partner Global Identifier",
+                        "default": null
+                    },
+                    {
+                        "name": "birthDate",
+                        "type": "string",
+                        "doc": "Birth Date of the Contract Holder",
+                        "default": null
+                    },
+                    {
+                        "name": "street",
+                        "type": "string",
+                        "doc": "Street of the Contract Holder as per Contract Document",
+                        "default": null
+                    },
+                    {
+                        "name": "houseNumber",
+                        "type": "string",
+                        "doc": "House Number of the Contract Holder as per Contract Document",
+                        "default": null
+                    },
+                    {
+                        "name": "zipCode",
+                        "type": "string",
+                        "doc": "Zip Code of the Contract Holder as per Contract Document",
+                        "default": null
+                    },
+                    {
+                        "name": "city",
+                        "type": "string",
+                        "doc": "City of the Contract Holder as per Contract Document",
+                        "default": null
+                    },
+                    {
+                        "name": "country",
+                        "type": "string",
+                        "doc": "Country of the Contract Holder as per Contract Document",
+                        "default": null
+                    },
+                    {
+                        "name": "email",
+                        "type": "string",
+                        "doc": "Email of the Contract Holder as per Contract Document",
+                        "default": null
+                    },
+                    {
+                        "name": "phone",
+                        "type": "string",
+                        "doc": "Phone of the Contract Holder as per Contract Document",
+                        "default": null
+                    },
+                    {
+                        "name": "mobile",
+                        "type": "string",
+                        "doc": "Mobile of the Contract Holder as per Contract Document",
+                        "default": null
+                    },
+                    {
+                        "name": "fax",
+                        "type": "string",
+                        "doc": "Fax of the Contract Holder as per Contract Document",
+                        "default": null
+                    }
+                ]
+            },
+            "doc": "Details of the Contract Holder"
+        },
+        {
+            "name": "contractParticipants",
+            "type": {
+                "type": "array",
+                "items": {
+                    "type": "record",
+                    "name": "Participant",
+                    "namespace": "ch.dps.fremdvertrag.processed",
+                    "fields": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "doc": "Name of the Contract Participant",
+                            "default": null
+                        },
+                        {
+                            "name": "zepasId",
+                            "type": "string",
+                            "doc": "Helvetia Business Partner Global Identifier",
+                            "default": null
+                        },
+                        {
+                            "name": "birthDate",
+                            "type": "string",
+                            "doc": "Birth Date of the Contract Participant",
+                            "default": null
+                        }
+                    ]
+                }
+            },
+            "doc": "List of Contract Participants",
+            "default": null
+        },
+        {
+            "name": "policyType",
+            "type": "string",
+            "doc": "Type of the Policy",
+            "default": null
+        },
+        {
+            "name": "coverage",
+            "type": "string",
+            "doc": "Coverage details of the Policy",
+            "default": null
+        },
+        {
+            "name": "annualPremium",
+            "type": "double",
+            "doc": "Annual Premium Amount",
+            "default": null
+        },
+        {
+            "name": "currency",
+            "type": "string",
+            "doc": "Currency of the Premium Amount",
+            "default": "CHF"
+        },
+        {
+            "name": "status",
+            "type": "string",
+            "doc": "Status of the Contract",
+            "default": "active"
+        }
+    ]
+}

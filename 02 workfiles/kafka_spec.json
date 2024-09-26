@@ -1,0 +1,108 @@
+{
+    "name": "data",
+    "namespace": "ch.dps.fremdvertrag.processed",
+    "type": "record",
+    "fields": [
+        {
+        "name": "Name",
+        "type": "string",
+        "doc": "Competitor Contract Name (Number) as given on the Document",
+        "required": true
+        },
+        {
+            "name": "Competitor",
+            "type": "string",
+            "doc": "Competitor Name",
+            "required": true
+        },
+        {
+            "name": "StartDate",
+            "type": "string",
+            "doc": "Contract Start Date in YYYY-MM-DD format",
+            "required": true
+        },
+        {
+            "name": "ExpirationDate",
+            "type": "string",
+            "doc": "Contract Expiration Date in YYYY-MM-DD format",
+            "required": true
+        },
+        {
+            "name": "ContractHolder",
+            "type": {
+                "type": "record",
+                "name": "ContractHolder",
+                "fields": [
+                    {
+                        "name": "Name",
+                        "type": "string",
+                        "doc": "Name of the Contract Holder",
+                        "required": true
+                    },
+                    {
+                        "name": "ZepasId",
+                        "type": "string",
+                        "doc": "Helvetia Business Partner Global Identifier",
+                        "required": true
+                    }
+                ]
+            },
+            "doc": "Details of the Contract Holder",
+            "required": true
+        },
+        {
+            "name": "ContractParticipants",
+            "type": {
+                "type": "array",
+                "items": "record",
+                "fields": [
+                    {
+                        "name": "Name",
+                        "type": "string",
+                        "doc": "Name of the Contract Holder",
+                        "required": true
+                    },
+                    {
+                        "name": "ZepasId",
+                        "type": "string",
+                        "doc": "Helvetia Business Partner Global Identifier",
+                        "required": true
+                    }
+                ]
+            },
+            "doc": "List of Contract Participants' accounts",
+            "required": false
+        },
+        {
+            "name": "PolicyType",
+            "type": "string",
+            "doc": "Type of the Policy",
+            "required": true
+        },
+        {
+            "name": "Coverage",
+            "type": "string",
+            "doc": "Coverage details of the Policy",
+            "required": true
+        },
+        {
+            "name": "AnnualPremium",
+            "type": "string",
+            "doc": "Annual Premium Amount",
+            "required": true
+        },
+        {
+            "name": "Currency",
+            "type": "string",
+            "doc": "Currency of the Premium Amount",
+            "default": "CHF",
+            "required": true
+        },
+        {
+            "name": "Status",
+            "type": "string",
+            "doc": "Status of the Contract",
+            "default": "Active"
+        }
+    ]
+}
